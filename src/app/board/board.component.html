@@ -1,0 +1,15 @@
+<h1 style="font-family:'Courier New'; color: white">Current Player: {{player}}</h1>
+
+<ion-button color="danger" fill="solid" (click)="newGame()">Start new Game</ion-button>
+
+<h2 style="font-family:'Courier New'; color: white" *ngIf="winner">
+  Player {{winner}} has won the game!
+</h2>
+
+<main>
+  <app-square
+      *ngFor="let val of squares; let i = index"
+      [value]="val"
+      (click)="makeMove(i)">
+  </app-square>
+</main>
